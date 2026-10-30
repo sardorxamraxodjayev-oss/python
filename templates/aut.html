@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>registratsiya</title>
+</head>
+<body>
+    <h1>registratsiya</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ forms.as_p }}
+        <button type="submit">royhatdan otish</button>
+    </form>
+    <a href="{% url 'login' %}">ackauntiz bormi kirish</a>
+</body>
+</html>

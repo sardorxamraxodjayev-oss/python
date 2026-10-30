@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roast & Co. | Add Coffee</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f7f2e9;
+            color: #302018;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 85px;
+            padding: 0 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e8ded0;
+            background: #fffdf8;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #a66b42;
+        }
+
+        .header-text {
+            color: #806d5e;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px 35px;
+        }
+
+        .eyebrow {
+            color: #a66b42;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 6vw, 54px);
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        h1 span {
+            color: #a66b42;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 440px;
+            margin: auto;
+            color: #847367;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .form-wrapper {
+            width: calc(100% - 32px);
+            max-width: 650px;
+            margin: 15px auto 70px;
+            padding: 38px;
+            background: #fffdf8;
+            border: 1px solid #e9dfd2;
+            border-radius: 8px;
+            box-shadow: 0 18px 50px rgba(69, 42, 25, 0.07);
+        }
+
+        .form-heading {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-bottom: 25px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #eee5d9;
+        }
+
+        .coffee-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f2e5d5;
+            border-radius: 50%;
+            font-size: 25px;
+        }
+
+        .form-heading h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .form-heading p {
+            font-size: 13px;
+            color: #958274;
+        }
+
+        form p {
+            margin-bottom: 22px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #493427;
+        }
+
+        input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #e2d5c5;
+            border-radius: 5px;
+            background: #fffefa;
+            color: #302018;
+            font: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: 0.25s;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #a66b42;
+            box-shadow: 0 0 0 3px rgba(166, 107, 66, 0.1);
+        }
+
+        input[type="file"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: 1px dashed #cdb9a4;
+            border-radius: 5px;
+            background: #faf5ed;
+            color: #806d5e;
+            font-size: 13px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            accent-color: #805033;
+        }
+
+        ul.errorlist {
+            list-style: none;
+            color: #b33b2e;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .helptext {
+            display: block;
+            margin-top: 7px;
+            color: #958274;
+            font-size: 12px;
+        }
+
+        .save-btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 8px;
+            background: #432b1f;
+            color: #fff8ef;
+            border: 1px solid #432b1f;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .save-btn:hover {
+            background: #68442e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 43, 31, 0.15);
+        }
+
+        .bottom-note {
+            text-align: center;
+            margin-top: 22px;
+            color: #a08e7d;
+            font-size: 12px;
+        }
+
+        footer {
+            padding: 25px 15px;
+            text-align: center;
+            border-top: 1px solid #e8ded0;
+            color: #958274;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        footer span {
+            color: #805033;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                height: 70px;
+                padding: 0 20px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .header-text {
+                font-size: 10px;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .form-wrapper {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">ROAST <span>&</span> CO.</div>
+        <div class="header-text">Coffee · Comfort · Quality</div>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">Our Coffee Collection</div>
+
+        <h1>Every cup tells<br>a <span>story.</span></h1>
+
+        <p>
+            Add something special to our menu.
+            Great coffee begins with attention to every detail.
+        </p>
+    </section>
+
+    <main class="form-wrapper">
+
+        <div class="form-heading">
+            <div class="coffee-icon">☕</div>
+
+            <div>
+                <h2>Add New Coffee</h2>
+                <p>Fill in the details below</p>
+            </div>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="save-btn">
+                Save to Menu &nbsp; →
+            </button>
+        </form>
+
+        <div class="bottom-note">
+            Made with love and freshly roasted coffee beans.
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 <span>ROAST & CO.</span> — BREWED WITH PASSION
+    </footer>
+
+</body>
+</html>
